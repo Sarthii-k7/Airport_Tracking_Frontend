@@ -1,0 +1,9 @@
+#asd {
+  /*height: 200px;*/
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(to right, rgba(20,112,128,0.2), rgba(20,112,128,1)); /* Standard syntax (must be last) */
+}
+.container a[type=btn1]:hover{
+  color: #5379fa;
+  opacity: 0.8;
+}

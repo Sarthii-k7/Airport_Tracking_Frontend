@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="col-xl-auto" id="bsd" style=" align-content: center; padding: 60px 60px; border: #1b1e21; border-bottom-right-radius: 4px; border-top-left-radius: 4px">
+        <collapsible-list [type]="'accordion'">
+          <collapsible-list-item>
+            <collapsible-header class="waves-effect" id="asd" style=" align-content: center; padding: 20px 20px; border: #1b1e21;">
+              +<button class="btn btn-group-lg btn-primary"><b>Add Network</b></button>
+            </collapsible-header>
+            <collapsible-body [expanded]="false">
+              <div class="container-fluid bg-light" style="border-radius: 4px;">
+                <h5>Add Location:</h5><br>
+                <form>
+                  <div class="form-group">
+                    <input placeholder="Enter new location" class="form-control" #locc>
+                  </div>
+                  <br>
+                  <button class="btn btn-primary" style="margin-bottom: 8px;" (click)="onSubmit(locc)">Add this network</button>
+                </form>
+              </div>
+            </collapsible-body>
+          </collapsible-list-item>
+          <br><br><br>
+          <hr>
+          <collapsible-list-item>
+            <collapsible-header class="waves-effect" id="aasd" style="align-content: center; padding: 20px 20px; border: #1b1e21;">
+              +<button type="button" class="btn btn-group-lg btn-primary" (click)="addin()"><b>Add Node</b></button>
+            </collapsible-header>
+            <collapsible-body [expanded]="false">
+
+              <p>Select a location to add new node on that network </p>
+              <form>
+                <select
+                  (change)="onSelect($event.target.value)"
+                  class="custom-select custom-select mb-3" id="loc-name" name="name" required>
+                  <option selected>Select location Here</option>
+                  <option *ngFor="let bname of list;"  value= {{bname.bid}}  >
+                    {{bname.bloc}} -> {{bname.bid}}
+                  </option>
+                </select>
+                <div class="form-group">
+                  <input placeholder="Enter new location for this node" name="a" [(ngModel)]="nid" class="form-control" #nloc required>
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="onSubmit1(nloc)">Submit</button>
+              </form>
+            </collapsible-body>
+          </collapsible-list-item>
+        </collapsible-list>
+      <button (click)="onBack()" type="button" class="btn btn-dark btn-group-lg" style=" align-content:center ;font-family:'Exo',sans-serif;"><i>Back</i></button>
+      <!--<a (click)="onBack()" class="btn btn-danger">Back</a>-->
+    </div>
+</div>
+
+<!--<div class="container">-->
+  <!--<div class="col-xl-auto bg-dark" style=" padding: 60px 60px; border: #1b1e21;">-->
+    <!--<collapsible-list [type]="'accordion'">-->
+      <!--&lt;!&ndash;<collapsible-list-item>&ndash;&gt;-->
+      <!--&lt;!&ndash;<collapsible-header class="waves-effect bg-secondary" style=" align-content: center; padding: 20px 20px; border: #1b1e21;">&ndash;&gt;-->
+      <!--&lt;!&ndash;<button class="btn btn-group-lg btn-primary"><b>Add Network</b></button>&ndash;&gt;-->
+      <!--&lt;!&ndash;</collapsible-header>&ndash;&gt;-->
+      <!--<collapsible-list-item>-->
+        <!--<collapsible-header class="waves-effect">-->
+          <!--&lt;!&ndash;<button><b>Add New Network</b></button>&ndash;&gt;-->
+          <!--<a class="btn btn-group-lg btn-primary"><b>Add Network</b></a>-->
+        <!--</collapsible-header>-->
+        <!--<collapsible-body [expanded]="false">-->
+          <!--<div class="container-fluid bg-light" style="padding: 10px 10px; border-radius: 4px">-->
+            <!--<h5>Add Location:</h5>-->
+            <!--<form>-->
+              <!--<div class="form-group">-->
+                <!--<input placeholder="Enter new location" class="form-control" #locc>-->
+              <!--</div>-->
+              <!--<br>-->
+              <!--<button class="btn btn-primary" (click)="onSubmit(locc)">Add this network</button>-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</collapsible-body>-->
+      <!--</collapsible-list-item>-->
+    <!--&lt;!&ndash;</collapsible-list>&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+    <!--&lt;!&ndash;<collapsible-list [type]="'accordion'">&ndash;&gt;-->
+      <!--<collapsible-list-item>-->
+        <!--<collapsible-header class="waves-effect" style="border: #1b1e21; font-family: 'Exo',sans-serif;font-size: 20px;font-weight: 400;">-->
+          <!--<button type="button" class="accordion" (click)="addin()"><b>Add New Node</b></button>-->
+        <!--</collapsible-header>-->
+        <!--<collapsible-body [expanded]="false">-->
+          <!--<div class="container-fluid bg-light" style="padding: 10px 10px; border-radius: 4px">-->
+            <!--<p>Select a location to add new node on that network: </p>-->
+            <!--<form>-->
+              <!--<select-->
+                <!--(change)="onSelect($event.target.value)"-->
+                <!--class="custom-select custom-select mb-3" id="loc-name" name="name" required>-->
+                <!--<option selected>Select location Here</option>-->
+                <!--<option *ngFor="let bname of list;"  value= {{bname.bid}}  >-->
+                  <!--{{bname.bloc}}, {{bname.bid}}-->
+                <!--</option>-->
+              <!--</select>-->
+              <!--&lt;!&ndash;<form class="form-horizontal">&ndash;&gt;-->
+              <!--<div class="form-group">-->
+                <!--<input placeholder="Enter new location for this node" class="form-control" #nloc required>-->
+              <!--</div>-->
+              <!--<br>-->
+              <!--<button class="btn btn-primary" (click)="onSubmit1(nloc)">Submit</button>-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</collapsible-body>-->
+      <!--</collapsible-list-item>-->
+    <!--</collapsible-list>-->
+  <!--</div>-->
+  <!--<button (click)="onBack()" class="btn btn-danger" style="margin-top: 10px;">Back</button>-->
+  <!--&lt;!&ndash;<button (click)="onSave()" id="read-more" class="btn btn-link pull-right" style="margin-right: 25px; margin-bottom: 10px;">Go Back To Home</button>&ndash;&gt;-->
+<!--</div>-->

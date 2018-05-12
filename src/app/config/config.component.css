@@ -1,0 +1,16 @@
+#asd {
+  /*height: 200px;*/
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(to right, rgba(134, 171, 235,1), rgba(134, 171, 235,0)); /* Standard syntax (must be last) */
+}
+#aasd {
+  /*!*height: 200px;*!   add node*/
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(to right, rgba(163, 180, 255,1), rgba(163, 180, 255,0)); /* Standard syntax (must be last) */
+}
+#bsd {
+  /*height: 200px;*/
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(to bottom, rgba(41, 61, 61,1), rgba(41, 61, 61,0.4)); /* Standard syntax (must be last) */
+}
+/**/
